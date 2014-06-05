@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @debt.amount %>
+</p>
+
+<p>
+  <strong>Debtor name:</strong>
+  <%= @debt.debtor_name %>
+</p>
+
+<p>
+  <strong>Creditor name:</strong>
+  <%= @debt.creditor_name %>
+</p>
+
+<p>
+  <strong>Debtor phone:</strong>
+  <%= @debt.debtor_phone %>
+</p>
+
+<p>
+  <strong>Creditor phone:</strong>
+  <%= @debt.creditor_phone %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @debt.message %>
+</p>
+
+<%= link_to 'Edit', edit_debt_path(@debt) %> |
+<%= link_to 'Back', debts_path %>
