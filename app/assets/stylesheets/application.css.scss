@@ -36,15 +36,16 @@
   color: #fff;
 }
 
-.info-jumbotron {
+#info-jumbotron {
   margin-bottom: 0px;
 }
 
-.input-jumbotron {
+#input-jumbotron {
   background: url(/assets/input.jpg) no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 900px;
+  margin-bottom: 0px;
 }
 
 .form-wrapper {
@@ -52,4 +53,8 @@
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+#footer-jumbotron {
+  margin-bottom: 0px;
 }
