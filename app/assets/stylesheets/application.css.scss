@@ -19,17 +19,37 @@
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+
+.main-jumbotron {
+  background: url(/assets/jumbotron.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 0px;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+.main-jumbotron h2 {
+  color: #fff;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+.main-jumbotron p {
+  color: #fff;
+}
+
+.info-jumbotron {
+  margin-bottom: 0px;
+}
+
+.input-jumbotron {
+  background: url(/assets/input.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.form-wrapper {
+  background: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }

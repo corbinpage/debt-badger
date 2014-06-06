@@ -1,6 +1,10 @@
 class DebtsController < ApplicationController
   before_action :set_debt, only: [:show, :edit, :update, :destroy]
 
+  # GET /home
+  def home
+  end
+
   # GET /debts
   # GET /debts.json
   def index
