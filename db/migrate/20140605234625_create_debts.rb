@@ -7,6 +7,7 @@ class CreateDebts < ActiveRecord::Migration
       t.string :debtor_phone
       t.string :creditor_phone
       t.string :message
+      t.boolean :active
 
       t.timestamps
     end

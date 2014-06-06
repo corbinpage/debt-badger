@@ -10,21 +10,31 @@
 <div class="jumbotron" id="info-jumbotron">
   <div class="container">
     <div class="row">
-  <div class="col-md-4">
-    <h2>Heading</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
-  <div class="col-md-4">
-    <h2>Heading</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
- </div>
-  <div class="col-md-4">
-    <h2>Heading</h2>
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <%= image_tag('calendar.png', class: "info_icon") %>
+          <h2>Time is Money</h2>
+        </div>
+        <p>Let's face it. You were nice enough to cover your "good buddy" for dinner and drinks last weekend, but you're not an ATM machine. He just "keeps forgetting" to send you the money despite having access to PayPal, Venmo, and a hundred other options. </p>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <%= image_tag('alarm.png', class: "info_icon") %>
+          <h2>Daily Reminders</h2>
+        </div>
+        <p>DebtBadger simply sends a daily text message to the offender reminding him/her that it's time to pay. We'll handle the pestering reminders so you don't have to. The perpetual rining and buzzing will  drive the culprit to hand over the necessary funds pronto.</p>
+     </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <%= image_tag('bubbles.png', class: "info_icon") %>
+          <h2>Cancel Anytime</h2>
+        </div>
+          <p>Once the debt is paid, you can cancel the daily texts anytime at the push of a button. It's that simple. The debtor will soon be pestering YOU to turn off the service so the power will be in your hands! Maybe they'll offer to cover dinner next time!</p>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <a href="#input-jumbotron"><button type="button" class="btn btn-primary btn-lg">Get Started!</button></a>
     </div>
   </div>
 </div>
@@ -34,32 +44,39 @@
       <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
         <div class="panel panel-default">
           <div class="panel-body">                
-
-          <form role="form">
-            <h2>Only One Form!</h2>
+          <form role="form" action="/debts" method="post">
+            <h2 class="form-title">Just One Form!</h2>
+            <hr>
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-4">
                   <label>Amount Owed</label>
-                  <input type="float" name="amount" placeholder="Amount" class="form-control">
+                  <input type="text" name="debt[amount]" placeholder="Amount" class="form-control bfh-number" data-min="0" data-buttons="false">
                 </div>
               </div>
               <br>
-              <label>Debtor's Info</label>
-              <input type="text" placeholder="Debtor's Name" class="form-control">
-              <input type="text" placeholder="Phone Number" class="form-control">
+              <div class="row">
+                <div class="col-sm-9">
+                  <label>Debtor's Information</label>
+                  <input type="text" name="debt[debtor_name]" placeholder="Debtor's Name" class="form-control" maxlength="100">
+                  <input type="text" name="debt[debtor_phone]" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd">
+                </div>
+              </div>
               <br>
-              <label>Your Info</label>
-              <input type="text" placeholder="Your Name" class="form-control">
-              <input type="text" placeholder="Phone Number" class="form-control">
+              <div class="row">
+                <div class="col-sm-9">
+                  <label>Your Information</label>
+                  <input type="text" name="debt[creditor_name]" placeholder="Your Name" class="form-control" maxlength="100">
+                  <input type="text" name="debt[creditor_phone]" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="Phone Number" name="debt-phone">
+                </div>
+              </div>
               <br>
               <label>Message</label>
-              <textarea class="form-control counted" name="message" placeholder="Type in your message here" rows="5" style="margin-bottom:10px;"></textarea>
+              <textarea class="form-control counted" name="debt[message]" placeholder="Type in your message here" rows="5" style="margin-bottom:10px;"></textarea>
               <h6 class="pull-right" id="counter">160 characters remaining</h6>
               <button class="btn btn-info" type="submit">Done!</button>
             </div>
           </form>
-
           </div>
         </div>
       </div>
@@ -70,7 +87,22 @@
 <div class="jumbotron" id="footer-jumbotron">
   <div class="container">
     <div class="row">
-
+      <div class="col-md-6">
+        <div class="text-center">
+          <%= image_tag('lock.png', class: "info_icon") %>
+          <h2>Secure</h2>
+        </div>
+        <p>Don't you worry. We're not going to do anything with your phone number. In fact, we'll delete it from our servers as soon as the debt is pay. Your privacy is incredibly important to us!</p>
+      </div>
+      <div class="col-md-6">
+        <div class="text-center">
+          <%= image_tag('cog.png', class: "info_icon") %>
+          <h2>Contact Support</h2>
+        </div>
+          <p>If you have any questions or feedback about the service, please contact our support team below. We're happy to turn off a forgotten reminder or switch up the message sent to your debtor. </p>
+        <div class="text-center">
+        </div>
+     </div>
     </div>
   </div>
 </div>
