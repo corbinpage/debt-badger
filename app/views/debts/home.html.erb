@@ -1,13 +1,21 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron main-jumbotron">
   <div class="container">
-    <h2>Does somebody owe you money?</h2>
-    <p>Debt Badger helps you reclaim your lost money by pestering the debtor into paying up. Just enter the offender's phone number below and we'll send them a daily reminder to pay their bill!</p>
-    <p><a href="#info-jumbotron" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Does somebody owe you money?</h2>
+        <p>Debt Badger helps you reclaim your lost money by pestering the debtor into paying up. Just enter the offender's phone number below and we'll send them a daily reminder to pay their bill!</p>
+        <p><a href="#info-jumbotron" class="btn btn-primary btn-lg db-button" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
   </div>
 </div>
-
 <div class="jumbotron" id="info-jumbotron">
+  <br>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -20,7 +28,7 @@
       <div class="col-md-4">
         <div class="text-center">
           <%= image_tag('alarm.png', class: "info_icon") %>
-          <h2>Daily Reminders</h2>
+          <h2>Setup Daily Reminders</h2>
         </div>
         <p>DebtBadger simply sends a daily text message to the offender reminding him/her that it's time to pay. We'll handle the pestering reminders so you don't have to. The perpetual rining and buzzing will  drive the culprit to hand over the necessary funds pronto.</p>
      </div>
@@ -34,14 +42,19 @@
     </div>
     <br>
     <div class="row text-center">
-      <a href="#input-jumbotron"><button type="button" class="btn btn-primary btn-lg">Get Started!</button></a>
+      <a href="#input-jumbotron"><button type="button" class="btn btn-primary btn-lg db-button">Get Started!</button></a>
     </div>
   </div>
 </div>
 <div class="jumbotron" id="input-jumbotron">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
         <div class="panel panel-default">
           <div class="panel-body">                
           <form role="form" action="/debts" method="post">
@@ -71,10 +84,10 @@
                 </div>
               </div>
               <br>
-              <label>Message</label>
+              <label>Your Message</label>
               <textarea class="form-control counted" name="debt[message]" placeholder="Type in your message here" rows="5" style="margin-bottom:10px;"></textarea>
               <h6 class="pull-right" id="counter">160 characters remaining</h6>
-              <button class="btn btn-info" type="submit">Done!</button>
+              <button class="btn btn-info db-button" type="submit">Start Badgering!</button>
             </div>
           </form>
           </div>
