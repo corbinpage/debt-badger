@@ -25,15 +25,30 @@
   width: 40px;
 }
 
+.navbar-default
 .navbar-brand {
+  color: #393A3A;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
+.navbar-default
+.navbar-brand:hover {
+  color: #428bca;
+}
+
+.navbar-default .navbar-nav > li > a {
+color: #393A3A;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+color: #428bca;
+}
+
 .main-jumbotron {
-  background: url(/assets/jumbotron2.jpg) no-repeat center center fixed;
+  background: url(/assets/jumbotron.jpg) no-repeat center center fixed;
   background-size: cover;
   width: 100%;
   height: 700px;
@@ -41,7 +56,11 @@
 }
 
 .db-button {
-  background-color: #0091BE
+  background-color: #0091be
+}
+
+.db-button:hover{
+  background-color: #4CD3FC
 }
 
 a {
@@ -68,15 +87,6 @@ a {
   margin-bottom: 0px;
 }
 
-.input-container {
-/*  margin-top: auto;
-  margin-bottom: auto;
-*/  display:inline-block;
-  vertical-align:middle;
-  float: none;
-  position: relative;
-}
-
 .form-wrapper {
   background: #fff;
   -moz-border-radius: 5px;
@@ -90,5 +100,42 @@ a {
 }
 
 #footer-jumbotron {
+  margin-bottom: 0px;
+}
+
+
+/* Show Debts ---------------------------------------------------- */
+
+.alert-container {
+  margin-top: 51px;
+}
+
+#success-jumbotron {
+  background-color: #3FB4FC;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+
+.smilie-wrapper h1 {
+  font-size: 100px;
+}
+
+.smilie-text {
+  color: #FFF;
+  position: relative;
+  bottom: 10px;
+}
+
+.congrats-text {
+  font-size: 40px;
+}
+
+/* Show Debts ---------------------------------------------------- */
+
+.support-jumbotron {
+  background: url(/assets/support.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
   margin-bottom: 0px;
 }

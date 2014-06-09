@@ -5,6 +5,14 @@ class DebtsController < ApplicationController
   def home
   end
 
+  # GET /about
+  def about
+  end
+
+  # GET /support
+  def support
+  end
+
   # GET /debts
   # GET /debts.json
   def index
@@ -26,18 +34,14 @@ class DebtsController < ApplicationController
   end
 
   # POST /debts
-  # POST /debts.json
   def create
-    @debt = Debt.new(debt_params)
+    @debt = Debt.start_new(debt_params)
 
-    respond_to do |format|
-      if @debt.save
-        format.html { redirect_to @debt, notice: 'Debt was successfully created.' }
-        format.json { render :show, status: :created, location: @debt }
-      else
-        format.html { render :new }
-        format.json { render json: @debt.errors, status: :unprocessable_entity }
-      end
+    if @debt.save
+      redirect_to @debt, notice: "Your automated text was successfully created."
+    else
+      flash[:error] = 'Uh Oh, your automated text was NOT created.' 
+      render :new
     end
   end
 
