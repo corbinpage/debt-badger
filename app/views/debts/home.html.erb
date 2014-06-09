@@ -9,7 +9,7 @@
         <br>
         <h2>Does somebody owe you money?</h2>
         <p>Debt Badger helps you reclaim your lost money by pestering the debtor into paying up. Just enter the offender's phone number below and we'll send them a daily reminder to pay their bill!</p>
-        <p><a href="#info-jumbotron" class="btn btn-primary btn-lg db-button" role="button">Learn more &raquo;</a></p>
+        <p><a href="#info-jumbotron" class="btn btn-lg" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@
     </div>
     <br>
     <div class="row text-center">
-      <a href="#input-jumbotron"><button type="button" class="btn btn-primary btn-lg db-button">Get Started!</button></a>
+      <a href="#input-jumbotron"><button type="button" class="btn btn--lg">Get Started!</button></a>
     </div>
   </div>
 </div>
@@ -71,7 +71,7 @@
               <div class="row">
                 <div class="col-sm-9">
                   <label>Debtor's Information</label>
-                  <input type="text" name="debt[debtor_name]" placeholder="Debtor's Name" class="form-control" maxlength="100">
+                  <input type="text" name="debt[debtor_name]" placeholder="Debtor's Name" class="form-control" maxlength="20">
                   <input type="text" name="debt[debtor_phone]" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd">
                 </div>
               </div>
@@ -79,7 +79,7 @@
               <div class="row">
                 <div class="col-sm-9">
                   <label>Your Information</label>
-                  <input type="text" name="debt[creditor_name]" placeholder="Your Name" class="form-control" maxlength="100">
+                  <input type="text" name="debt[creditor_name]" placeholder="Your Name" class="form-control" maxlength="20">
                   <input type="text" name="debt[creditor_phone]" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="Phone Number" name="debt-phone">
                 </div>
               </div>
@@ -87,7 +87,7 @@
               <label>Your Message</label>
               <textarea class="form-control counted" name="debt[message]" placeholder="Type in your message here" rows="5" style="margin-bottom:10px;"></textarea>
               <h6 class="pull-right" id="counter">160 characters remaining</h6>
-              <button class="btn btn-info db-button" type="submit">Start Badgering!</button>
+              <button class="btn btn--md" type="submit">Start Badgering!</button>
             </div>
           </form>
           </div>
