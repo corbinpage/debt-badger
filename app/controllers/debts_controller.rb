@@ -5,10 +5,6 @@ class DebtsController < ApplicationController
   def home
   end
 
-  # GET /about
-  def about
-  end
-
   # GET /support
   def support
   end
