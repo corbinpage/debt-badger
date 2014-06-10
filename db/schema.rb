@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605234625) do
+ActiveRecord::Schema.define(version: 20140610170845) do
 
   create_table "debts", force: true do |t|
     t.float    "amount"
@@ -20,8 +20,21 @@ ActiveRecord::Schema.define(version: 20140605234625) do
     t.string   "debtor_phone"
     t.string   "creditor_phone"
     t.string   "message"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sent_messages", force: true do |t|
+    t.text     "message"
+    t.string   "to"
+    t.string   "from"
+    t.string   "status"
+    t.integer  "debt_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sent_messages", ["debt_id"], name: "index_sent_messages_on_debt_id"
 
 end
