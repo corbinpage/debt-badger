@@ -98,6 +98,63 @@
 
 })(jQuery);
 
-$(function() {
-    $(".counted").charCounter(160,{container: "#counter"});
+$(document).ready(function () {
+
+    $('#debt-form').validate({
+      rules: {
+        'debt[amount]': {
+          number: true,
+          min: 1,
+          required: true
+        },
+        'debt[debtor_name]': {
+          maxlength: 20,
+          required: true
+        },
+        'debt[debtor_phone]': {
+          required: true,
+          maxlength: 17,
+          minlength: 17
+        },
+        'debt[creditor_name]': {
+          maxlength: 20,
+          required: true
+        },
+        'debt[creditor_phone]': {
+          required: true,
+          maxlength: 17,
+          minlength: 17
+        },
+        'debt[message]': {
+          minlength: 4,
+          maxlength: 160,
+          required: true
+        }
+      },
+      messages: {
+        'debt[debtor_phone]': {
+          minlength: "Please enter a valid phone number."
+        },
+        'debt[creditor_phone]': {
+          minlength: "Please enter a valid phone number."
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').removeClass('success').addClass('error');
+      },
+      success: function(element) {
+        $(element).closest('.control-group').removeClass('error');
+        $(element).remove();
+      }
+    });
+
+    $(function() {
+      $(".counted").charCounter(160,{container: "#counter"});
+    });
 });
+
+
+
+
+
+

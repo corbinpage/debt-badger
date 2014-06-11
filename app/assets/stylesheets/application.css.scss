@@ -20,36 +20,60 @@
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
 
-h2, p {
+h2, p, b {
   font-family: avenir, helvetica, arial, sans-serif; 
 }
 
+label.valid {
+  width: 24px;
+  height: 24px;
+  background: url(/assets/valid.png) center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+label.error {
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
 
 .logo_icon {
   height: 40px;
   width: 40px;
 }
 
-.navbar-default
+.navbar-default,
 .navbar-brand {
-  color: #393A3A;
-  padding-top: 5px;
+  background-color: #40B3D6;
+  border-color: #40B3D6;
+  padding-top: 7px;
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .navbar-default
+.navbar-brand {
+  color: #393A3A;
+  font-size: 30px;
+}
+
+.navbar-default
 .navbar-brand:hover {
-  color: #428bca;
+  color: #fff;
 }
 
 .navbar-default .navbar-nav > li > a {
-color: #393A3A;
+  color: #393A3A;
+/*color: #393A3A;*/
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-color: #428bca;
+  color: #fff;
+/*color: #428bca;*/
 }
 
 
@@ -103,6 +127,7 @@ color: #428bca;
 }
 
 #info-jumbotron {
+  padding-top: 70px;
   margin-bottom: 0px;
 }
 
@@ -128,6 +153,7 @@ color: #428bca;
 
 #footer-jumbotron {
   margin-bottom: 0px;
+  background-color: #3CA8C9;
 }
 
 
