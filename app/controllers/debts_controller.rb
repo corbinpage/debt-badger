@@ -15,11 +15,6 @@ class DebtsController < ApplicationController
     redirect_to @debt
   end  
 
-  # POST /SEND
-  def send
-    Debt.send_automated_messages
-  end  
-
   # GET /debts
   # GET /debts.json
   def index
@@ -42,7 +37,7 @@ class DebtsController < ApplicationController
 
   # POST /debts
   def create
-    @debt = Debt.start_new(debt_params)
+    @debt = Debt.start_new(debt_params,request.original_url)
 
     if @debt.save
       redirect_to @debt, notice: "Your automated text was successfully created."

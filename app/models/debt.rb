@@ -9,21 +9,26 @@ class Debt < ActiveRecord::Base
   #               :message,
   #               :active
 
-  def self.start_new(debt_params)
-    new_debt = Debt.new(debt_params)
+  def self.start_new(debt_params,request_url)
+    new_debt = Debt.create(debt_params)
 
-    new_debt.send_creditor_onboarding_message
+    new_debt.send_creditor_onboarding_message(request_url)
 
     new_debt.active = true
     new_debt
   end
 
-  def send_creditor_onboarding_message
-    message_one = "Hey #{self.creditor_name}, DebtBadger here!"
-    message_two = "I'll be sending #{self.debtor_name} a reminder text everyday until you get paid. Just text STOP back to this number when you're paid. kthxbye!"
+  def send_creditor_onboarding_message(request_url)
+    message_array = []
+    message_array[0] = "Hey #{self.creditor_name}, MoneyBadger here! We're here to help track down your #{ActionController::Base.helpers.number_to_currency(self.amount)}."
+    message_array[1] = "We'll be sending #{self.debtor_name} a reminder text everyday until you get your money! Just go to the link below and cancel the texts once you're paid!"
+    message_array[2] = "#{Rails.application.routes.url_helpers.debt_path(self)}"
+    message_array[3] = "#{request_url}/#{self.id}"
     
-    self.sent_messages << SentMessage.send_message_to_number(message_one, self.creditor_phone)
-    self.sent_messages << SentMessage.send_message_to_number(message_two, self.creditor_phone)
+    message_array.each do |message|
+      self.sent_messages << SentMessage.send_message_to_number(message, self.creditor_phone)
+      sleep(0.3)
+    end
   end
 
   def sent_automated_message
@@ -39,8 +44,8 @@ class Debt < ActiveRecord::Base
   end
 
   def deactivate
-    self.active = !self.active
-    # self.active = false
+    # self.active = !self.active
+    self.active = false
     self.save
   end
 
