@@ -15,6 +15,11 @@ class DebtsController < ApplicationController
     redirect_to @debt
   end  
 
+  # POST /SEND
+  def send
+    Debt.send_automated_messages
+  end  
+
   # GET /debts
   # GET /debts.json
   def index
