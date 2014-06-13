@@ -36,7 +36,12 @@ class Debt < ActiveRecord::Base
     active_debts.each do |d|
       d.sent_automated_message
     end
+  end
 
+  def deactivate
+    self.active = !self.active
+    # self.active = false
+    self.save
   end
 
 

@@ -1,5 +1,5 @@
 class DebtsController < ApplicationController
-  before_action :set_debt, only: [:show, :edit, :update, :destroy]
+  before_action :set_debt, only: [:show, :edit, :update, :destroy, :deactivate]
 
   # GET /home
   def home
@@ -8,6 +8,12 @@ class DebtsController < ApplicationController
   # GET /support
   def support
   end
+
+  # POST /DEACTIVATE
+  def deactivate
+    @debt.deactivate
+    redirect_to @debt
+  end  
 
   # GET /debts
   # GET /debts.json

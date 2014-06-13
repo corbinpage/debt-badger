@@ -1,11 +1,14 @@
 <div class="container alert-container">
   <div class="row">
-<!--
     <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-        <%= value %>
+      <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
       </div>
-    <% end %> -->
+      <!--<div class="<%= flash_class(key) %>">
+        <%= value %>
+      </div> -->
+     <% end %>
     <p id="notice"><%= notice %></p>
   </div>
 <!-- </div>
@@ -19,49 +22,54 @@
   </div> -->
 </div>
 
+<% if !@debt.active %>
+<div class="container">
+  <div class="row complete-row">
+    <div class="col-xs-12 col-md-12 text-center">
+      <h2>This debt has been completed!</h2>
+      <p>Thanks for using MoneyBadger!</p>
+      <%= image_tag('badger_original.png', class: "complete_logo") %>
+      <p>Feel free to enter a new debt <a href="<%= root_path %>">here</a> anytime!</p>
+    </div>
+  </div>
+</div>
+<% end %>
 <div class="jumbotron">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <h1>Debt Information<h2>
         <p>
-          <strong>Amount:</strong>
-          <%= @debt.amount %>
+          <strong><%= @debt.debtor_name %></strong> owes <strong><%= @debt.creditor_name %></strong> the amount of <strong><%= number_to_currency(@debt.amount) %></strong>.
         </p>
+        <h3>Phone Numbers</h3>
+        <ul>
+          <li><p><%= @debt.debtor_name %>: <%= @debt.debtor_phone %></p></li>
+          <li><p><%= @debt.creditor_name %>: <%= @debt.creditor_phone %></p></li>
+        </ul>
+        <h3>Daily Message</h3>
         <p>
-          <strong>Debtor name:</strong>
-          <%= @debt.debtor_name %>
-        </p>
-        <p>
-          <strong>Creditor name:</strong>
-          <%= @debt.creditor_name %>
-        </p>
-        <p>
-          <strong>Debtor phone:</strong>
-          <%= @debt.debtor_phone %>
-        </p>
-        <p>
-          <strong>Creditor phone:</strong>
-          <%= @debt.creditor_phone %>
-        </p>
-        <p>
-          <strong>Message:</strong>
           <%= @debt.message %>
         </p>
-<!--         <%= link_to 'Edit', edit_debt_path(@debt) %> |
-        <%= link_to 'Back', debts_path %> -->
+<!--    <%= link_to 'Edit', edit_debt_path(@debt) %> -->
       </div>
     </div>
   </div>
 </div>
-
+<% if @debt.active %>
 <div class="container">
   <div class="row cancel-row">
     <div class="col-xs-12 col-md-12 text-center">
       <h2>Already been paid? Cancel below in one click!</h2>
-      <a href="#"><button type="button" class="btn btn--lg cancel-btn btn-danger">Cancel</button></a>
+      <form method="post" action="/debts/<%= @debt.id %>/deactivate">
+        <div>
+          <input value="Cancel" type="submit" class="btn btn--lg cancel-btn btn-danger"/>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<% end %>
 <div class="jumbotron nyc-jumbotron">
   <div class="container">
     <div class="row">

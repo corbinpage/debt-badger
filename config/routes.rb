@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'home' => 'debts#home'
   get 'support' => 'debts#support', as: 'support'
+  post 'debts/:id/deactivate' => 'debts#deactivate'
   root 'debts#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

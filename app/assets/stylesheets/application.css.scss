@@ -86,6 +86,7 @@ label.error {
   border-radius: .3em; 
   border-style: solid; 
   border-width: 1px; 
+  border-color: #0091be;
   display: inline-block; 
   font-family: avenir, helvetica, arial, sans-serif; 
   letter-spacing: .15em; 
@@ -193,6 +194,20 @@ label.error {
 .cancel-row {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.complete-row {
+  margin-top: 65px;
+  margin-bottom: 110px;
+}
+
+.complete-row p {
+  font-size: 21px;
+}
+
+.complete_logo {
+  height: 400px;
+  width: 400px;
 }
 
 .cancel-btn, .cancel-btn:link, .cancel-btn:visited { 
