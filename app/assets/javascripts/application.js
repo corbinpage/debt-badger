@@ -155,7 +155,7 @@ $(document).ready(function () {
     });
 
     function update_message() {
-      var amount = (!$("#amount").val()) ? "<amount>" : $("#amount").val();
+      var amount = (!$("#amount").val()) ? "<amount>" : '$' + $.number( $("#amount").val(), 2 );
       var debtor_name = (!$("#debtor_name").val()) ? "<debtor>" : $("#debtor_name").val();
       var creditor_name = (!$("#creditor_name").val()) ? "<your_name>" : $("#creditor_name").val();
 
@@ -163,6 +163,8 @@ $(document).ready(function () {
 
       $("#message-box").val(message_val)
     };
+
+  // $('#amount').number( true, 2 );
 
     $('#amount,#debtor_name,#creditor_name').on('input', function() { 
       update_message();  
