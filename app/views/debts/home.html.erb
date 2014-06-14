@@ -70,7 +70,7 @@
                   <div class="control-group">
                     <label class="control-label" for="debt[amount]">Amount Owed</label>
                     <div class="controls">
-                      <input type="text" name="debt[amount]" placeholder="Amount" class="form-control bfh-number" data-min="0" data-buttons="false" required>
+                      <input id="amount" type="text" name="debt[amount]" placeholder="Amount" class="form-control bfh-number" data-min="0" data-buttons="false" required>
                     </div>
                   </div>
                 </div>
@@ -79,7 +79,7 @@
               <div class="row">
                 <div class="control-group col-sm-9">
                   <label>Debtor's Information</label>
-                  <input type="text" name="debt[debtor_name]" placeholder="Debtor's Name" class="form-control" maxlength="20" required>
+                  <input id="debtor_name" type="text" name="debt[debtor_name]" placeholder="Debtor's Name" class="form-control" maxlength="20" required>
                   <input type="text" name="debt[debtor_phone]" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" required>
                 </div>
               </div>
@@ -87,13 +87,13 @@
               <div class="row">
                 <div class="control-group col-sm-9">
                   <label>Your Information</label>
-                  <input type="text" name="debt[creditor_name]" placeholder="Your Name" class="form-control" maxlength="20" required>
+                  <input id="creditor_name" type="text" name="debt[creditor_name]" placeholder="Your Name" class="form-control" maxlength="20" required>
                   <input type="text" name="debt[creditor_phone]" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="Phone Number" name="debt-phone" required>
                 </div>
               </div>
               <br>
               <label>Your Message</label>
-              <textarea class="form-control counted" name="debt[message]" placeholder="Type in your message here" rows="5" style="margin-bottom:10px;" required></textarea>
+              <textarea id="message-box" class="form-control counted" name="debt[message]" placeholder="Type in your message here" rows="5" required>Hey &lt;debtor&gt;, you still owe &lt;you&gt; &lt;amount&gt;. Just pay him back already! Otherwise, I’ll be badging you each day until you pay! Love, MoneyBadger</textarea>
               <h6 class="pull-right" id="counter">160 characters remaining</h6>
               <button class="mb-btn btn--md" type="submit">Start Badgering!</button>
             </div>

@@ -98,6 +98,8 @@
 
 })(jQuery);
 
+
+
 $(document).ready(function () {
 
     $('#debt-form').validate({
@@ -149,8 +151,23 @@ $(document).ready(function () {
     });
 
     $(function() {
-      $(".counted").charCounter(160,{container: "#counter"});
+      $("#message-box").charCounter(160,{container: "#counter"});
     });
+
+    function update_message() {
+      var amount = (!$("#amount").val()) ? "<amount>" : $("#amount").val();
+      var debtor_name = (!$("#debtor_name").val()) ? "<debtor>" : $("#debtor_name").val();
+      var creditor_name = (!$("#creditor_name").val()) ? "<your_name>" : $("#creditor_name").val();
+
+      var message_val = "Hey " + debtor_name + ", you still owe " + creditor_name + " " + amount + ". Just pay him back already! Otherwise, I’ll be badging you each day until you pay! Love, MoneyBadger"
+
+      $("#message-box").val(message_val)
+    };
+
+    $('#amount,#debtor_name,#creditor_name').on('input', function() { 
+      update_message();  
+    });
+
 });
 
 
