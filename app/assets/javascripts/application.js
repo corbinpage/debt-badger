@@ -117,7 +117,7 @@ $(document).ready(function () {
           required: true,
           maxlength: 17,
           minlength: 17
-        },
+        }, 
         'debt[creditor_name]': {
           maxlength: 20,
           required: true
