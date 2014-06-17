@@ -121,7 +121,7 @@ $(document).ready(function () {
         'debt[creditor_name]': {
           maxlength: 20,
           required: true
-        },
+        }, 
         'debt[creditor_phone]': {
           required: true,
           maxlength: 17,
