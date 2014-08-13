@@ -6,4 +6,4 @@ MoneyBadger helps you reclaim your lost loan by pestering the debtor into paying
 
 ## License
 
-My Spiffy App is MIT Licensed. See LICENSE for details.
+MoneyBadger is MIT Licensed. See LICENSE for details.
