@@ -39,7 +39,7 @@
 		width: 293px; height: 588px;
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
-		background-image: url("macbook/macbook.png");
+		/*background-image: url("macbook/macbook.png");*/
 	}
 
 		.device-mockup > .device > .screen {
