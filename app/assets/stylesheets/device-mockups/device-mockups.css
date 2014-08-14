@@ -74,7 +74,7 @@
 .device-mockup.iphone5 > .device,
 .device-mockup.iphone5.black > .device,
 .device-mockup.iphone5.portrait.black > .device {
-	background-image: url("iphone5/iphone5_port_black.png");
+	background-image: url(/assets/iphone5_port_black.png);
 }
 
 .device-mockup.iphone5 > .device > .screen,
