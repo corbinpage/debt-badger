@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= device-mockups/device-mockups2.css
 //= require_tree .
 
 (function($) {
