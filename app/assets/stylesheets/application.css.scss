@@ -161,7 +161,8 @@ label.error {
 }
 
 .support-link {
-  color: #fff;
+  color: #333;
+  text-decoration: underline;
 }
 
 .support-link:hover {
@@ -171,11 +172,6 @@ label.error {
 #message-box {
   margin-bottom: 10px;
 }
-
-#footer-jumbotron {
-  background-color: #039CBF;
-}
-
 
 /* Show Debts ---------------------------------------------------- */
 
